@@ -5,10 +5,10 @@
 ## Запуск через Docker Compose
 
 ```bash
-docker-compose up --build
+docker-compose up -d --build
 ```
 
-API будет доступно на `http://localhost:8000`.
+FastAPI приложение будет развернуто здесь: `http://localhost:8000`
 
 ## API
 
@@ -49,4 +49,4 @@ uv sync
 uv run pytest
 ```
 
-Тесты используют SQLite и не требуют PostgreSQL.
+Тесты используют SQLite и не требуют PostgreSQL
