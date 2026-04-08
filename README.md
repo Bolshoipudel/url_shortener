@@ -53,4 +53,4 @@ uv sync
 uv run pytest
 ```
 
-Тесты используют SQLite и не требуют PostgreSQL.
+Тесты используют SQLite и не требуют PostgreSQL (для простоты и скорости тестирования) В docker compose используется pg согласно требованиям
