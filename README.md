@@ -10,9 +10,11 @@ docker-compose up -d --build
 
 FastAPI приложение будет развернуто здесь: `http://localhost:8000`
 
+Swagger UI: `http://localhost:8000/docs`
+
 ## API
 
-### Создать короткую ссылку
+### Создаем короткую ссылку
 
 ```bash
 curl -X POST http://localhost:8000/shorten \
@@ -25,13 +27,15 @@ curl -X POST http://localhost:8000/shorten \
 {"short_id": "aBcDeF", "short_url": "http://localhost:8000/aBcDeF"}
 ```
 
-### Перейти по короткой ссылке
+### Переход по короткой ссылке
 
 ```bash
-curl -L http://localhost:8000/aBcDeF
+curl http://localhost:8000/aBcDeF
 ```
 
-### Статистика переходов
+Вернёт `307 Temporary Redirect` на оригинальный URL.
+
+### Статистика
 
 ```bash
 curl http://localhost:8000/stats/aBcDeF
@@ -49,4 +53,4 @@ uv sync
 uv run pytest
 ```
 
-Тесты используют SQLite и не требуют PostgreSQL
+Тесты используют SQLite и не требуют PostgreSQL.
